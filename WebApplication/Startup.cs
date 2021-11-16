@@ -6,6 +6,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApplication.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using WebApplication.Models;
+using WebApplication.Models.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace WebApplication
 {
@@ -32,6 +40,10 @@ namespace WebApplication
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddMvc();
+            services.AddScoped<ParticipantsRepository>();
+            services.AddDbContext<StoholmDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
