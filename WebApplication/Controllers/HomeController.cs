@@ -27,6 +27,11 @@ namespace WebApplication.Controllers
             return View();
         }
 
+        public IActionResult Info()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         [AllowAnonymous]
         public IActionResult Error()
