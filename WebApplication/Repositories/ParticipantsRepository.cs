@@ -6,22 +6,18 @@ using System.Threading.Tasks;
 
 namespace WebApplication.Models.Repositories
 {
-    #region CodedByRezan
     public class ParticipantsRepository
     {
-        StoholmDbContext db;
+        private readonly StoholmDbContext db;
         public ParticipantsRepository(StoholmDbContext _db)
         {
             db = _db;
         }
-        public List<Participants> List()
-            => db.participants.ToList();
-        public List<Participants> GetByDistance(int disId)
+        public List<Participant> List() => db.Participants.ToList();
+        public List<Participant> GetByDistance(int disId)
         {
-            var Participant = db.participants
-                .Where(p => p.Distance == disId);
+            var Participant = db.Participants.Where(p => p.Distance == disId);
             return Participant.ToList();
         }
     }
-    #endregion
 }

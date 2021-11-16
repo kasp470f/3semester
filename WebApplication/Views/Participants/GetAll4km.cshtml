@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication.Models.Participants>
+﻿@model IEnumerable<WebApplication.Models.Participant>
 
 @{
     ViewData["Title"] = "GetAll4km";
@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.PartcipantName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.runnerNamber)
+                @Html.DisplayNameFor(model => model.RunnerNumber)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Distance)
@@ -31,7 +31,7 @@
                 @Html.DisplayFor(modelItem => item.PartcipantName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.runnerNamber)
+                @Html.DisplayFor(modelItem => item.RunnerNumber)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Distance)
