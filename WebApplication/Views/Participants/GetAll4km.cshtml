@@ -7,41 +7,56 @@
 <h1>GetAll4km</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <button onclick="generatePDF()">Download as PDF</button>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PartcipantName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.runnerNamber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Distance)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartcipantName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.runnerNamber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distance)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+<div id="details">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PartcipantName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.runnerNamber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Distance)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartcipantName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.runnerNamber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Distance)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function generatePDF() {
+            // Choose the element that our list is rendered in.
+            const element = document.getElementById('details');
+            //Options
+            var opt = {
+                filename: 'List With 4km.pdf',
+            };
+            // Choose the element and save the PDF for our user.
+            html2pdf().set(opt).from(element).save()
+        }
+    </script>
 }
-    </tbody>
-</table>

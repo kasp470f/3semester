@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFApplication.ViewModel;
+using WPFApplication.Views;
 
 namespace WPFApplication
 {
@@ -20,9 +22,15 @@ namespace WPFApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        ParticipatesViewModel participates = new ParticipatesViewModel();
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = participates;
+            
+
+
         }
+
     }
 }
