@@ -40,7 +40,6 @@ namespace WPFApplication.ViewModel
                             ParticipateList.Add(new Participate
                             {
                                 Id = (int)reader["Id"],
-                                Name = (string)reader["PartcipantName"]
                         });
 
                         }
