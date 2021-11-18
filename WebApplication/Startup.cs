@@ -33,7 +33,6 @@ namespace WebApplication
             });
 
             services.AddControllersWithViews();
-            services.AddRazorPages();
             services.AddMvc();
             services.AddScoped<ParticipantsRepository>();
 
