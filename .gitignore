@@ -351,3 +351,4 @@ MigrationBackup/
 
 #Migrations
 WebApplication/Migrations/
+WebApplication/Migrations
