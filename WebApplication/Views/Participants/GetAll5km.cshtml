@@ -8,8 +8,10 @@
 
 
 <p>
-    <button onclick="generatePDF()">Download as PDF</button>
-</p>
+
+<p>
+    <a type="button" class="btn btn-primary" asp-area="" asp-controller="Participants" asp-action="ExportToCSV">Export To CSV</a>
+</p></p>
 <div id="details">
 
     <table class="table">
@@ -51,22 +53,22 @@
             }
         </tbody>
     </table>
-    </div>
+</div>
 
-    @section Scripts
+@section Scripts
     {
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            function generatePDF() {
-                // Choose the element that our list is rendered in.
-                const element = document.getElementById('details');
-                //Options
-                var opt = {
-                    filename: 'List With 5km.pdf',
-                };
-                // Choose the element and save the PDF for our user.
-                html2pdf().set(opt).from(element).save()
-            }
-        </script>
-    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function generatePDF() {
+            // Choose the element that our list is rendered in.
+            const element = document.getElementById('details');
+            //Options
+            var opt = {
+                filename: 'List With 5km.pdf',
+            };
+            // Choose the element and save the PDF for our user.
+            html2pdf().set(opt).from(element).save()
+        }
+    </script>
+}
 

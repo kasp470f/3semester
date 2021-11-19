@@ -13,10 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApplication.Models;
 using WebApplication.Models.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 using WebApplication.Data;
->>>>>>> master
 
 namespace WebApplication
 {
@@ -38,14 +36,11 @@ namespace WebApplication
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
-<<<<<<< Rezan
             services.AddMvc();
             services.AddScoped<ParticipantsRepository>();
             services.AddDbContext<StoholmDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-=======
             services.AddRazorPages();
->>>>>>> master
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
