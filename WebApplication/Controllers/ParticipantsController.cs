@@ -14,9 +14,12 @@ namespace WebApplication.Controllers
     public class ParticipantsController : Controller
     {
         ParticipantsRepository ParticipantsRepository;
+        StringBuilder sb;
+
         public ParticipantsController(ParticipantsRepository participantsRepository)
         {
             ParticipantsRepository = participantsRepository;
+            sb = new StringBuilder();
         }
         //GET: ParticipantsController
         public IActionResult Index()
@@ -24,30 +27,57 @@ namespace WebApplication.Controllers
             var participant = ParticipantsRepository.List();
             return View(participant);
         }
+        public IActionResult GetAll3km()
+        {
+            var participant = ParticipantsRepository.GetByDistance(3.5F);
+            return View(participant);
+        }
         public IActionResult GetAll5km()
         {
-            var participant = ParticipantsRepository.GetByDistance(5);
+            var participant = ParticipantsRepository.GetByDistance(5.5F);
             return View(participant);
         }
-        public IActionResult GetAll4km()
+        public IActionResult GetAll10km()
         {
-            
-            var participant = ParticipantsRepository.GetByDistance(4);
+            var participant = ParticipantsRepository.GetByDistance(10.1F);
             return View(participant);
         }
-
-        public IActionResult ExportToCSV()
+        public IActionResult Export3KmToCSV()
         {
-            var participants = ParticipantsRepository.List();
-            var sb = new StringBuilder();
+            var participants = ParticipantsRepository.GetByDistance(3);
+            sb.AppendLine("Runner Number,Time,Distance");
+            foreach (var participant in participants)
+            {
+                string convertDate = participant.Time.ToString("H:mm");
+                sb.AppendLine($"{participant.Id},{convertDate},{participant.Distance}");
+            }
+           
+            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "participantsList3Km.csv");
+        }
+        public IActionResult Export5KmToCSV()
+        {
+            var participants = ParticipantsRepository.GetByDistance(5);
             sb.AppendLine("Runner Number,Time");
             foreach (var participant in participants)
             {
-                if(participant.Distance  ==parti)
                 string convertDate = participant.Time.ToString("H:mm");
-                sb.AppendLine($"{participant.Id},{convertDate}");
+                sb.AppendLine($"{participant.Id},{convertDate},{participant.Distance}");
             }
-            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "participantsList.csv");
+
+            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "participantsList5Km.csv");
         }
+        public IActionResult Export10KmToCSV()
+        {
+            var participants = ParticipantsRepository.GetByDistance(5);
+            sb.AppendLine("Runner Number,Time");
+            foreach (var participant in participants)
+            {
+                string convertDate = participant.Time.ToString("H:mm");
+                sb.AppendLine($"{participant.Id},{convertDate},{participant.Distance}");
+            }
+            return File(new UTF8Encoding().GetBytes(sb.ToString()), "text/csv", "participantsList10Km.csv");
+        }
+
+
     }
 }

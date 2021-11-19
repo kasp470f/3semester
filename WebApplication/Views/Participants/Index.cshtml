@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Distance)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +38,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

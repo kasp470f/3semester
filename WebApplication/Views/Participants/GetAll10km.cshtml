@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebApplication.Models.Participants>
 
 @{
-ViewData["Title"] = "Deltagerne med 5,5 km";
+    ViewData["Title"] = "Deltagerne med 10,1 km";
 }
 
-<h1>Deltagerne med 5,5 km</h1>
+<h1>Deltagerne med 10,1 km</h1>
 
 <p>
-    <a class="btn btn-primary" asp-area="" asp-controller="Participants" asp-action="Export5KmToCSV">Export To CSV</a>
+    <a class="btn btn-primary" asp-area="" asp-controller="Participants" asp-action="Export10KmToCSV">Export To CSV</a>
 </p>
 <table class="table">
     <thead>
@@ -42,7 +42,7 @@ ViewData["Title"] = "Deltagerne med 5,5 km";
             <td>
                 @Html.DisplayFor(modelItem => item.Time)
             </td>
-           
+            
         </tr>
 }
     </tbody>

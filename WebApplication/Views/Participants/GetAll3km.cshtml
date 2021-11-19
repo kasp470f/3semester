@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication.Models.Participants>
+
+@{
+    ViewData["Title"] = "Deltagerne med 3.5 km";
+}
+<h1>Deltagerne med 3.5 km</h1>
+
+
+
+<p>
+    <a class="btn btn-primary" asp-area="" asp-controller="Participants" asp-action="Export3KmToCSV">Export To CSV</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PartcipantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.runnerNamber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartcipantName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.runnerNamber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

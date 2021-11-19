@@ -11,12 +11,12 @@ namespace WebApplication.Migrations
                 name: "participants",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PartcipantName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    runnerNamber = table.Column<int>(type: "int", nullable: false),
-                    Distance = table.Column<int>(type: "int", nullable: false),
-                    Time = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    PartcipantName = table.Column<string>(nullable: true),
+                    runnerNamber = table.Column<int>(nullable: false),
+                    Distance = table.Column<float>(nullable: false),
+                    Time = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

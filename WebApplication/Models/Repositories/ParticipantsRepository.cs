@@ -16,7 +16,7 @@ namespace WebApplication.Models.Repositories
         }
         public List<Participants> List()
             => db.participants.ToList();
-        public List<Participants> GetByDistance(int disId)
+        public List<Participants> GetByDistance(float disId)
         {
             var Participant = db.participants
                 .Where(p => p.Distance == disId);
