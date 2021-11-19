@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="1080" Width="1920">
+    
+        <Grid Background="DarkGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-    </Grid>
+            <ListView Grid.Column="0" Margin="20"/> 
+
+            <Button Grid.Column="1" Height="100" Width="200" Margin="380,152,380,812" Content="Upload" Background="LightBlue" Foreground="White" Click="Upload_Button_Click"/>
+            <Button Grid.Column="1" Height="100" Width="200" Content="Vælg Mappe" Margin="380,482,380,482" Background="LightBlue" Foreground="White" Click="Folder_Button_Click" ClickMode="Press"/>
+
+            <TextBox Name="txtEditor"/>
+        </Grid>
+    
 </Window>
