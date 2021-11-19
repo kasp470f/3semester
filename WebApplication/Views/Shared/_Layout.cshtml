@@ -25,6 +25,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Participants
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="" asp-controller="Participants" asp-action="GetAll5km">GetAll5km</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Participants" asp-action="GetAll4km">GetAll4km</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Info">Information</a>
+                        </li>
                     </ul>
                 </div>
             </div>

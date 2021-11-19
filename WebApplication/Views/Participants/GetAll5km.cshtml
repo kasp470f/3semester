@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApplication.Models.Participant>
+
+@{
+    ViewData["Title"] = "GetAll5km";
+}
+
+<h1>GetAll5km</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PartcipantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunnerNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartcipantName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RunnerNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distance)
+                </td>
+                <td asp-format="{0:hh:mm}">
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
