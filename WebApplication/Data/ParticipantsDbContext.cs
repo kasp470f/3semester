@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace WebApplication.Models
 {
-    public class StoholmDbContext : DbContext
+    public class ParticipantsDbContext : DbContext
     {
-        public StoholmDbContext(DbContextOptions<StoholmDbContext> options) : base(options)
+        public ParticipantsDbContext(DbContextOptions<ParticipantsDbContext> options) : base(options)
         {
 
         }

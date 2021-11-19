@@ -8,8 +8,8 @@ namespace WebApplication.Models.Repositories
 {
     public class ParticipantsRepository
     {
-        private readonly StoholmDbContext db;
-        public ParticipantsRepository(StoholmDbContext _db)
+        private readonly ParticipantsDbContext db;
+        public ParticipantsRepository(ParticipantsDbContext _db)
         {
             db = _db;
         }
