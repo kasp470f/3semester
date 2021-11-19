@@ -13,6 +13,7 @@ namespace WebApplication.Models
         {
 
         }
+
         public DbSet<Participant> Participants { get; set; }
     }
 }
