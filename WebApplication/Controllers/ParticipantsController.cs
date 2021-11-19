@@ -26,12 +26,14 @@ namespace WebApplication.Controllers
             return View(participant);
         }
 
+        //[Authorize(Roles = "Organizer")]
         public IActionResult GetAll5km()
         {
             var participant = ParticipantsRepository.GetByDistance(5);
             return View(participant);
         }
 
+        //[Authorize(Roles = "Organizer")]
         public IActionResult GetAll4km()
         {
             var participant = ParticipantsRepository.GetByDistance(4);
