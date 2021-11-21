@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.IO;
 using System.Text;
 using System.Windows;
 using WPFApplication.Model;
@@ -13,52 +14,34 @@ namespace WPFApplication.ViewModel
 {
     class ParticipatesViewModel
     {
-        ViewUserControl viewUser;
-        public ParticipatesViewModel()
-        {
-            GetAll();
-            
-        }
        
-        public List<Participate> GetAll()
+       
+        public List<string> GetAll()
         {
-            SqlConnection connString = new SqlConnection(ConfigurationManager.ConnectionStrings["path"].ConnectionString);
-            var  ParticipateList = new List<Participate>();
+            var ParticipateList = new List<string>();
+
+            string file = FilePath();
             try
             {
-                if (connString.State == ConnectionState.Closed)
+                var sw = new StreamReader(file);
+                while (!sw.EndOfStream)
                 {
-                    connString.Open();
-                    var query = "SELECT  * FROM  participants";
-                    SqlCommand command = new SqlCommand(query, connString);
-                    command.CommandType = CommandType.Text;
-                    using (DbDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-
-                            ParticipateList.Add(new Participate
-                            {
-                                Id = (int)reader["Id"],
-                        });
-
-                        }
-                    }
+                    var splits = sw.ReadLine().Split(";");
+                    ParticipateList.Add(splits[0]);
                 }
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connString.Close();
+                    MessageBox.Show(ex.Message);
             }
             return ParticipateList;
         }
 
-        
+        public string FilePath()
+        {
+            string filePath = @"C:\Temp\data.csv";
+            return filePath;
+        }
 
     }
 }

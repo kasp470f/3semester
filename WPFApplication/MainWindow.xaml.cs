@@ -22,15 +22,19 @@ namespace WPFApplication
     /// </summary>
     public partial class MainWindow : Window
     {
-        ParticipatesViewModel participates = new ParticipatesViewModel();
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = participates;
             
-
-
         }
 
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
+            UserControl uc;
+            uc = new Import();
+            import.Children.Add(uc);
+            uc.Visibility = Visibility.Visible;
+
+        }
     }
 }

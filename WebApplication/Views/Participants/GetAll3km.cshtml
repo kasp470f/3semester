@@ -13,11 +13,9 @@
 <table class="table">
     <thead>
         <tr>
+           
             <th>
-                @Html.DisplayNameFor(model => model.PartcipantName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.runnerNamber)
+                @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Distance)
@@ -32,11 +30,9 @@
         @foreach (var item in Model)
         {
             <tr>
+               
                 <td>
-                    @Html.DisplayFor(modelItem => item.PartcipantName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.runnerNamber)
+                    @Html.DisplayFor(modelItem => item.Id)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Distance)

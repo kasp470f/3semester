@@ -7,7 +7,44 @@
         xmlns:views="clr-namespace:WPFApplication.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF232A34">
-        <views:ViewUserControl ></views:ViewUserControl>
+    <Grid x:Name="ad" Background="#FF232A34">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <Button Content="Import"
+                    Name="btnImport"
+                    VerticalAlignment="Center"
+                    Width="125"
+                    Height="40"
+                    FontSize="14" Foreground="#FF1C1C1C" Click="btnImport_Click"
+                    
+                    />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" >
+            <Button Content="Upload"
+                    Name="btnUpload"
+                    VerticalAlignment="Center"
+                    Width="125"
+                    Height="40"
+                    FontSize="14" Foreground="#FF1C1C1C" Click="btnImport_Click"
+                    
+                    />
+        </StackPanel>
+        <StackPanel x:Name="in" Grid.Row="1" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid x:Name="import">
+                
+            </Grid>
+        </StackPanel>
+
     </Grid>
+    
 </Window>

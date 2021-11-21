@@ -44,8 +44,7 @@ namespace WebApplication.Controllers
         }
         public IActionResult Export3KmToCSV()
         {
-            var participants = ParticipantsRepository.GetByDistance(3);
-            sb.AppendLine("Runner Number,Time,Distance");
+            var participants = ParticipantsRepository.GetByDistance(3.5F);
             foreach (var participant in participants)
             {
                 string convertDate = participant.Time.ToString("H:mm");
@@ -56,8 +55,7 @@ namespace WebApplication.Controllers
         }
         public IActionResult Export5KmToCSV()
         {
-            var participants = ParticipantsRepository.GetByDistance(5);
-            sb.AppendLine("Runner Number,Time");
+            var participants = ParticipantsRepository.GetByDistance(5.5F);
             foreach (var participant in participants)
             {
                 string convertDate = participant.Time.ToString("H:mm");
@@ -68,8 +66,7 @@ namespace WebApplication.Controllers
         }
         public IActionResult Export10KmToCSV()
         {
-            var participants = ParticipantsRepository.GetByDistance(5);
-            sb.AppendLine("Runner Number,Time");
+            var participants = ParticipantsRepository.GetByDistance(10.1F);
             foreach (var participant in participants)
             {
                 string convertDate = participant.Time.ToString("H:mm");
