@@ -40,54 +40,6 @@ namespace WPFApplication.Views
             ParticipateList = participates.GetAll();
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            string fileSavePath = @"C:\Temp\savedData.csv";
-            StreamWriter sw;
-            if (!File.Exists(fileSavePath))
-            {
-                using (sw = File.CreateText(fileSavePath))
-                {
-                    if (cmbParticipantList.Items.Count > 0)
-                    {
-                        string strData = cmbParticipantList.SelectedItem.ToString();
-                        string Time = DateTime.Now.ToString("HH:mm");
-                        sw.WriteLine($"{strData},{Time}");
-                        sw.Close();
-                        MessageBox.Show("File Saved!");
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Du har ikke valgt et løbernummer fra list");
-                    }
-                    
-                }
-            }
-            else
-            {
-                using (FileStream fs = new FileStream(fileSavePath, FileMode.Append, FileAccess.Write))
-                using (sw = new StreamWriter(fs))
-                {
-                    if (cmbParticipantList.Items.Count > 0)
-                    {
-                        string strData = cmbParticipantList.SelectedItem.ToString();
-                        string Time = DateTime.Now.ToString("HH:mm");
-                        sw.WriteLine($"{strData}{Time}");
-                        sw.Close();
-                        MessageBox.Show("File Saved!");
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Du har ikke valgt et løbernummer fra list");
-                    }
-                }
-
-            }
-            cmbParticipantList.Items.Remove(cmbParticipantList.SelectedItem);
-        }
-
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
             string filePath = @"C:\Temp";
@@ -125,5 +77,54 @@ namespace WPFApplication.Views
             }
 
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            string fileSavePath = @"C:\Temp\savedData.csv";
+            StreamWriter sw;
+            if (!File.Exists(fileSavePath))
+            {
+                using (sw = File.CreateText(fileSavePath))
+                {
+                    if (cmbParticipantList.Items.Count > 0)
+                    {
+                        string strData = cmbParticipantList.SelectedItem.ToString();
+                        string Time = DateTime.Now.ToString("HH:mm");
+                        sw.WriteLine($"{strData},{Time}");
+                        sw.Close();
+                        MessageBox.Show("File Saved!");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Du har ikke valgt et løbernummer fra list");
+                    }
+
+                }
+            }
+            else
+            {
+                using (FileStream fs = new FileStream(fileSavePath, FileMode.Append, FileAccess.Write))
+                using (sw = new StreamWriter(fs))
+                {
+                    if (cmbParticipantList.Items.Count > 0)
+                    {
+                        string strData = cmbParticipantList.SelectedItem.ToString();
+                        string Time = DateTime.Now.ToString("HH:mm");
+                        sw.WriteLine($"{strData},{Time}");
+                        sw.Close();
+                        MessageBox.Show("File Saved!");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Du har ikke valgt et løbernummer fra list");
+                    }
+                }
+
+            }
+            cmbParticipantList.Items.Remove(cmbParticipantList.SelectedItem);
+        }
+
     }
 }

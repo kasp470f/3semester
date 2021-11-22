@@ -22,17 +22,29 @@ namespace WPFApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserControl uc;
         public MainWindow()
         {
             InitializeComponent();
+            uc = new UserControl();
             
         }
 
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
-            UserControl uc;
+            
             uc = new Import();
-            import.Children.Add(uc);
+            MainView.Children.Clear();
+            MainView.Children.Add(uc);
+            uc.Visibility = Visibility.Visible;
+
+        }
+
+        private void btnUpload_Click(object sender, RoutedEventArgs e)
+        {
+            uc = new Upload();
+            MainView.Children.Clear();
+            MainView.Children.Add(uc);
             uc.Visibility = Visibility.Visible;
 
         }
