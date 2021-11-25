@@ -10,6 +10,7 @@ namespace WPFApplication
 {
     /// <summary>
     /// Interaction logic for App.xaml
+    /// <para>Created by Kasper</para>
     /// </summary>
     public partial class App : Application
     {

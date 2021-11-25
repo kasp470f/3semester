@@ -6,7 +6,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace WebApplication.Areas.Identity.Data
 {
-    // Add profile data for application users by adding properties to the AccountIdentity class
+    /// <summary>
+    /// Add profile data for application users by adding properties to the AccountIdentity class
+    /// <para>Created by Kasper</para>
+    /// </summary>
     public class AccountIdentity : IdentityUser
     {
         [PersonalData]

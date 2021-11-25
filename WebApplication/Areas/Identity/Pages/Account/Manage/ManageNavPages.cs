@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WebApplication.Areas.Identity.Pages.Account.Manage
 {
+    /// <summary>
+    /// <para>Created by Kasper</para>
+    /// </summary>
     public static class ManageNavPages
     {
         public static string Index => "Index";
@@ -40,6 +43,9 @@ namespace WebApplication.Areas.Identity.Pages.Account.Manage
 
         public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);
 
+        /// <summary>
+        /// <para>Created by Kasper</para>
+        /// </summary>
         private static string PageNavClass(ViewContext viewContext, string page)
         {
             var activePage = viewContext.ViewData["ActivePage"] as string

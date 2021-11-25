@@ -9,13 +9,25 @@ using WebApplication.Areas.Identity.Data;
 
 namespace WebApplication.Data
 {
+    /// <summary>
+    /// Bridge between entity class and database
+    /// <para>Created by Kasper</para>
+    /// </summary>
     public class WebApplicationContext : IdentityDbContext<AccountIdentity>
     {
+        /// <summary>
+        /// Constructor of Context
+        /// <para>Created by Kasper</para>
+        /// </summary>
         public WebApplicationContext(DbContextOptions<WebApplicationContext> options)
             : base(options)
         {
         }
 
+        /// <summary>
+        /// Configures the schema needed for the identity framework.
+        /// <para>Created by Kasper</para>
+        /// </summary>
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
