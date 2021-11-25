@@ -12,8 +12,14 @@ using WebApplication.Models.Repositories;
 
 namespace WebApplication
 {
+    /// <summary>
+    /// <para>Created by Kasper</para>
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// <para>Created by Kasper</para>
+        /// </summary>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -21,7 +27,10 @@ namespace WebApplication
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// <para>Created by Kasper</para>
+        /// </summary>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ParticipantsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -38,7 +47,10 @@ namespace WebApplication
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <para>Created by Kasper</para>
+        /// </summary>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

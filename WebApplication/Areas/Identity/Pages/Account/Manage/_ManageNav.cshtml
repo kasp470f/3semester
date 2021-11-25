@@ -1,4 +1,5 @@
-﻿@inject SignInManager<AccountIdentity> SignInManager
+﻿@* Created by Kasper *@
+@inject SignInManager<AccountIdentity> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebApplication.Models
 {
+    /// <summary>
+    /// <para>Created by Rezan</para>
+    /// </summary>
     public class Participant
     {
         [Key]

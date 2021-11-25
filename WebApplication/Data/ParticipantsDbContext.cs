@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace WebApplication.Models
 {
+    /// <summary>
+    /// <para>Created by Rezan</para>
+    /// </summary>
     public class ParticipantsDbContext : DbContext
     {
+        /// <summary>
+        /// <para>Created by Rezan</para>
+        /// </summary>
         public ParticipantsDbContext(DbContextOptions<ParticipantsDbContext> options) : base(options)
         {
 

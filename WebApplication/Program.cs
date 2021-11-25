@@ -9,13 +9,22 @@ using System.Threading.Tasks;
 
 namespace WebApplication
 {
+    /// <summary>
+    /// <para>Created by Kasper</para>
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// <para>Created by Kasper</para>
+        /// </summary>
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
 
+        /// <summary>
+        /// <para>Created by Kasper</para>
+        /// </summary>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

@@ -11,8 +11,18 @@ using WebApplication.Data;
 [assembly: HostingStartup(typeof(WebApplication.Areas.Identity.IdentityHostingStartup))]
 namespace WebApplication.Areas.Identity
 {
+    /// <summary>
+    /// Starts the identity and dbcontext database.
+    /// <para>Created by Kasper</para>
+    /// </summary>
     public class IdentityHostingStartup : IHostingStartup
     {
+
+        /// <summary>
+        /// A method that would setup the configuration of the WebHost
+        /// <para>Created by Kasper</para>
+        /// </summary>
+        /// <param name="builder">The Webhost Builder that we configure</param>
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
