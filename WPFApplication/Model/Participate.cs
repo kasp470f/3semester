@@ -4,6 +4,9 @@ using System.Text;
 
 namespace WPFApplication.Model
 {
+    /// <summary>
+    /// <para>Created by Rezan</para>
+    /// </summary>
     public class Participate
     {
         public int Id { get; set; }
